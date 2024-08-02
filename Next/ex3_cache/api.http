@@ -1,0 +1,9 @@
+POST https://api.origamid.online/produtos
+
+{
+    "nome":"teste",
+    "preco": 10,
+    "descricao":"teste",
+    "estoque": 10,
+    "importado": 1
+}
