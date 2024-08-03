@@ -12,6 +12,9 @@ export default function Menu() {
       <li>
         <Link href="/animais">Animais</Link>
       </li>
+      <li>
+        <Link href="/entrar">Entrar</Link>
+      </li>
     </ul>
   );
 }
