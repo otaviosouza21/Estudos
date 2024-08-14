@@ -1,9 +1,11 @@
 import { Roboto, Spectral } from "next/font/google";
 
-export const font_body = Roboto({
+export const font_body = Spectral({
   weight: ["400", "700"],
   style: ["normal"],
   subsets: ["latin"],
   display: "swap",
-  variable: '--font-body'
+  variable: '--type-second-spectral'
 });
+
+

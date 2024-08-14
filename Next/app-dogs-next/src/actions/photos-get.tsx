@@ -1,6 +1,6 @@
 "use server";
 
-export type Dog = {
+export type Photo = {
     id:number;
     author:string;
     title: string;
@@ -13,16 +13,17 @@ export type Dog = {
 }
 
 export type PhotoGetType = {
-    page: string;
+    page: string; 
     total:string;
     user:string
 }
 
-export default async function GetDogs({page,total,user} : PhotoGetType) {
+export default async function photosGet({page,total,user} : PhotoGetType) {
   try {
-    const response = await fetch(`https://dogsapi.origamid.dev/json//api/photo/?_page=${page}&_total=${total}&_user=${user}`)
+    const response = await fetch(`https://dogsapi.origamid.dev/json/api/photo/?_page=${page}&_total=${total}&_user=${user}`)
     if(!response.ok) throw new Error('Ocorreu um erro ao buscar dogs')
-    const dogs =  await response.json() as Dog[]
+    const fotos =  await response.json() as Photo[]
+    return fotos
   } catch (erro) {
     console.log("Ocorreu um erro" + erro);
   }

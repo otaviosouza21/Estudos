@@ -31,7 +31,7 @@
     display: inline-block;
     width: 14px;
     height: 17px;
-    background:url('./../../../public/icons/usuario.svg') no-repeat center center;
+    background:url('/icons/usuario.svg') no-repeat center center;
     margin-left: .5rem;
     position: relative;
     top: -1px;

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import styles from "./Header.module.css";
 import Image from "next/image";
-import Dogs from '../../../public/icons/dogs.svg'
+
 
 export default async function Header() {
  /*  const { data, userLogout } = React.useContext(UserContext); */
@@ -12,11 +12,11 @@ export default async function Header() {
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
         <Link className={styles.logo} href="/" aria-label="Dogs - Home">
-          <Image src={Dogs} alt="logo-dogs" width={28} height={22} />
+          <Image src={'/icons/dogs.svg'} alt="logo-dogs" width={28} height={22} priority />
         </Link>
         {data ? (
           <Link className={styles.login} href="/conta">
-         {/*    {data.nome} */}
+         {/*    {data.nome} */} Dogs
           </Link>
         ) : (
           <Link className={styles.login} href="/login">
