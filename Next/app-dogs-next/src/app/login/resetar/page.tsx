@@ -1,3 +1,4 @@
+import ResetarForm from "@/components/Form/ResetarForm/ResetarForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -5,8 +6,19 @@ export const metadata: Metadata = {
     description: 'Resete a sua senha'
 }
 
-export default function ResetarPage() {
+type ResetarSearchType={
+    key:string;
+    login:string
+}
+
+
+export default function ResetarPage(searchParams:ResetarSearchType) {
+
+
     return (
-        <div>Resetar</div>
+        <div className="animeLeft">
+            <h1 className="title">Resete a Senha</h1>
+            <ResetarForm keyToken={searchParams.key} login={searchParams.login}/>
+        </div>
     );
 }

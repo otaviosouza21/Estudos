@@ -3,7 +3,6 @@
 import { USER_POST } from "@/functions/api";
 import apiError from "@/functions/api-error";
 import login from "./login";
-import { error } from "console";
 
 export default async function createUser(state: {} | undefined, formData: FormData) {
   const username = formData.get("username") as string | null;
@@ -18,7 +17,6 @@ export default async function createUser(state: {} | undefined, formData: FormDa
       method: "POST",
       body: formData,
     });
-    console.log(await response.json());
     
     if (!response.ok) throw new Error("Email ou Usuario já cadastrado");
 
