@@ -7,12 +7,17 @@ type FeedFotosType = {
   fotos: Photo[];
 };
 
-export default function FeedFotos({ fotos }: FeedFotosType) {
+export default function FeedFotos({fotos} : FeedFotosType) {
+  if(!Array.isArray(fotos)){
+    fotos = []
+  }
+
+
   return (
     <ul className={`${styles.feed} animeLeft`}>
       {fotos.map((foto, i) => {
         return (
-          <li className={styles.photo} key={foto.id + i}>
+          <li className={styles.photo} key={foto.title + i}>
             <Link href={`/foto/${foto.id}`} scroll={false}>
               <Image
                 src={foto.src}

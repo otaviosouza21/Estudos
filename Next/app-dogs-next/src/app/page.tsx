@@ -3,18 +3,12 @@ import Feed from "@/components/Feed/Feed";
 
 export default async function Home() {
 
-  const options={
-    page: '1',
-    total:'6',
-    user:'0'
-  }
-  
-  const data = await photosGet(options)
+  const {data} = await photosGet()
 
   if(data)
   return (
     <section className="container mainContainer">
-      <Feed fotos={data}/>
+      {data && <Feed fotos={data}/>}
     </section>
   );
 }

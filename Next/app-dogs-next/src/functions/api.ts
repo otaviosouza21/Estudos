@@ -1,116 +1,83 @@
 // @ts-nocheck
 
-export const API_URL = 'https://dogsapi.origamid.dev/json';
+export const API_URL = "https://dogsapi.origamid.dev/json";
 
 export function TOKEN_POST() {
   return {
-    url: API_URL + '/jwt-auth/v1/token'
-  }
+    url: API_URL + "/jwt-auth/v1/token",
+  };
 }
 
-export function TOKEN_VALIDADE_POST(token) {
+export function TOKEN_VALIDADE_POST() {
   return {
-    url: API_URL + '/jwt-auth/v1/token/validate',
-    options: {
-      method: 'POST',
-      headers: {
-        Authorization: 'Bearer ' + token,
-      },
-    },
+    url: API_URL + "/jwt-auth/v1/token/validate",
   };
 }
 
 export function USER_GET() {
   return {
-    url: API_URL + '/api/user'
-}
-}
-
-export function PHOTO_POST(formData, token) {
-  return {
-    url: API_URL + '/api/photo',
-    options: {
-      method: 'POST',
-      headers: {
-        Authorization: 'Bearer ' + token,
-      },
-      body: formData,
-    },
+    url: API_URL + "/api/user",
   };
 }
 
-export function PHOTOS_GET({ page, total, user }) {
+export function PHOTO_POST() {
+  return {
+    url: API_URL + "/api/photo",
+  };
+}
+
+export function PHOTOS_GET({
+  page,
+  total,
+  user,
+}: {
+  page: number;
+  total: number;
+  user: 0 | string;
+}) {
   return {
     url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
-    options: {
-      method: 'GET',
-      cache: 'no-store',
-    },
   };
 }
 
-export function PHOTO_GET(id) {
+export function PHOTO_GET(id: string) {
   return {
     url: `${API_URL}/api/photo/${id}`,
-    options: {
-      method: 'GET',
-      cache: 'no-store',
-    },
   };
 }
 
 export function USER_POST() {
   return {
-    url: API_URL + '/api/user'
-  }
-}
-
-export function COMMENT_POST(id, body) {
-  return {
-    url: `${API_URL}/api/comment/${id}`,
-    options: {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer' + window.localStorage.getItem('token'),
-      },
-      body: JSON.stringify(body),
-    },
+    url: API_URL + "/api/user",
   };
 }
 
-export function PHOTO_DELETE(id) {
+export function COMMENT_POST(id: string) {
+  return {
+    url: `${API_URL}/api/comment/${id}`,
+  };
+}
+
+export function PHOTO_DELETE(id: string) {
   return {
     url: `${API_URL}/api/photo/${id}`,
-    options: {
-      method: 'DELETE',
-      headers: {
-        Authorization: 'Bearer' + window.localStorage.getItem('token'),
-      },
-    },
   };
 }
 
 export function PASSWORD_LOST() {
   return {
-    url: API_URL + '/api/password/lost',
+    url: API_URL + "/api/password/lost",
   };
 }
 
 export function PASSWORD_RESET() {
   return {
-    url: API_URL + '/api/password/reset',
-  }
+    url: API_URL + "/api/password/reset",
+  };
 }
 
-export function STATS_GET(body) {
+export function STATS_GET() {
   return {
-    url: API_URL + '/api/stats',
-    options: {
-      method: 'GET',
-      headers: {
-        Authorization: 'Bearer' + window.localStorage.getItem('token'),
-      },
-    },
+    url: API_URL + "/api/stats",
   };
 }
