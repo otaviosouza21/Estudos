@@ -44,7 +44,7 @@ const PhotoContent = ({
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments} single={single} />
+      <PhotoComments id={String(photo.id)} comments={comments} single={single} />
     </div>
   );
 };

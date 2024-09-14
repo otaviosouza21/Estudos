@@ -31,7 +31,7 @@ export default function ResetarForm({
 
   return (
     <>
-      <form className={styles.form} action="">
+      <form className={styles.form} action={action}>
         <Input label="Nova Senha" name="password" type="password" />
         <input type="hidden" name="login" value={login} />
         <input type="hidden" name="key" value={keyToken} />
